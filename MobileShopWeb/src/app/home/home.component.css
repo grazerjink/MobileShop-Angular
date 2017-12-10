@@ -1,0 +1,43 @@
+a.button, input.button {
+    background: red;
+}
+.product-grid .price-old {
+    color: lightslategray;
+    text-decoration: line-through;
+    font-weight: normal;
+    margin-right: 5px;
+    font-size: 12px;
+}
+.product-grid .price {
+    display: block;
+    font-weight: bold;
+    margin: 5px 0 10px 0;
+    padding: 0 8px;
+    color: brown;
+    font-size: 13px;
+}
+.box-product .price {
+    display: block;
+    font-weight: bold;
+    margin: 5px 0 10px 0;
+    padding: 0 8px;
+    color: red;
+    font-size: 13px;
+}
+.box-product .price-old {
+    color: lightslategray;;
+    text-decoration: line-through;
+    font-weight: normal;
+    margin-right: 5px;
+    font-size: 12px;
+}
+.pagination .links b {
+    vertical-align: middle;
+    display: inline-block;
+    border: 1px solid red;
+    padding: 4px 10px;
+    font-weight: normal;
+    text-decoration: none;
+    color: #fff;
+    background: red;
+}
