@@ -21,7 +21,12 @@
       "styles": [
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+          "../node_modules/jquery/dist/jquery.min.js",
+          "../node_modules/jcarousel/dist/jquery.jcarousel.min.js",
+          "../node_modules/flexslider/2.6.2/jquery.flexslider.js",
+          "../node_modules/tabs.js/tabs.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

@@ -1,0 +1,15 @@
+#header {
+    border-bottom: 3px solid black; 
+    margin-bottom: 10px;
+}
+
+#header #cart .heading h4 {
+    background: red;
+    width: 32px;
+    height: 32px;
+    float: left;
+    margin: 4px 0px 0 0;
+    padding: 0;
+    z-index: 1012;
+    position: relative;
+}
