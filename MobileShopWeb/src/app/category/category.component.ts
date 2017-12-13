@@ -13,6 +13,7 @@ export class CategoryComponent implements OnInit {
   
   tieuDe: string = "Danh mục hãng sản xuất";
   hangSanXuats: HangSanXuat[];
+  sanPhams: SanPham[];
 
   constructor(private hangSanXuatService: HangSanXuatService) { }
 

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,6 +21,12 @@ public class SanPhamController {
 	@GetMapping("sanphams")
 	public List<SanPham> getListSanPham() {
 		List<SanPham> list = sanPhamService.list();
+		return list;
+	}
+	
+	@GetMapping("sanphams/{id}")
+	public List<SanPham> getListSanPhamByCategoryId(@PathVariable Integer categoryId) {
+		List<SanPham> list = sanPhamService.listByCategoryId(categoryId);
 		return list;
 	}
 

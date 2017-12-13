@@ -45,52 +45,57 @@
   </div>
 </div>
 <!-- Description and Reviews Tab Start -->
-<div id="tabs" class="htabs"> <a href="#tab-description">Description</a> <a href="#tab-review">Reviews (0)</a> </div>
-<div id="tab-description" class="tab-content">
-  <p><strong>Revolutionary multi-touch interface.</strong><br>
-    iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow.</p>
-  <p><strong>Gorgeous 3.5-inch widescreen display.</strong><br>
-    Watch your movies, TV shows, and photos come alive with bright, vivid color on the 320-by-480-pixel display.</p>
-  <p><strong>Music downloads straight from iTunes.</strong><br>
-    Shop the iTunes Wi-Fi Music Store from anywhere with Wi-Fi.1 Browse or search to find the music youre looking for, preview it, and buy it with just a tap.</p>
-  <p><strong>Surf the web with Wi-Fi.</strong><br>
-    Browse the web using Safari and watch YouTube videos on the first iPod with Wi-Fi built in<br>
-    &nbsp;</p>
-</div>
-<div id="tab-review" class="tab-content">
-  <div id="review"></div>
-  <h2 id="review-title">Write a review</h2>
-  <br />
-  <b>Your Name:</b><br />
-  <input type="text" name="name" value="" />
-  <br />
-  <br />
-  <b>Your Review:</b>
-  <textarea name="text" cols="40" rows="8" style="width: 98%;"></textarea>
-  <span style="font-size: 11px;"><span style="color: #FF0000;">Note:</span> HTML is not translated!</span><br />
-  <br />
-  <b>Rating:</b> <span>Bad</span>&nbsp;
-  <input type="radio" name="rating" value="1" />
-  &nbsp;
-  <input type="radio" name="rating" value="2" />
-  &nbsp;
-  <input type="radio" name="rating" value="3" />
-  &nbsp;
-  <input type="radio" name="rating" value="4" />
-  &nbsp;
-  <input type="radio" name="rating" value="5" />
-  &nbsp;<span>Good</span><br />
-  <br />
-  <b>Enter the code in the box below:</b><br />
-  <input type="text" name="captcha" value="" />
-  <br />
-  <br />
-  <img src="index.php?route=product/product/captcha" alt="" id="captcha" /><br />
-  <br />
-  <div class="buttons">
-    <div class="right"><a id="button-review" class="button">Continue</a></div>
-  </div>
-</div>
+<mat-tab-group>
+  <mat-tab label="Description">
+    <div id="tab-description" class="tab-content">
+      <p><strong>Revolutionary multi-touch interface.</strong><br>
+        iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow.</p>
+      <p><strong>Gorgeous 3.5-inch widescreen display.</strong><br>
+        Watch your movies, TV shows, and photos come alive with bright, vivid color on the 320-by-480-pixel display.</p>
+      <p><strong>Music downloads straight from iTunes.</strong><br>
+        Shop the iTunes Wi-Fi Music Store from anywhere with Wi-Fi.1 Browse or search to find the music youre looking for, preview it, and buy it with just a tap.</p>
+      <p><strong>Surf the web with Wi-Fi.</strong><br>
+        Browse the web using Safari and watch YouTube videos on the first iPod with Wi-Fi built in<br>
+        &nbsp;</p>
+    </div>
+  </mat-tab>
+  <mat-tab label="Reviews (0)">
+      <div id="tab-review" class="tab-content">
+          <div id="review"></div>
+          <h2 id="review-title">Write a review</h2>
+          <br />
+          <b>Your Name:</b><br />
+          <input type="text" name="name" value="" />
+          <br />
+          <br />
+          <b>Your Review:</b>
+          <textarea name="text" cols="40" rows="8" style="width: 98%;"></textarea>
+          <span style="font-size: 11px;"><span style="color: #FF0000;">Note:</span> HTML is not translated!</span><br />
+          <br />
+          <b>Rating:</b> <span>Bad</span>&nbsp;
+          <input type="radio" name="rating" value="1" />
+          &nbsp;
+          <input type="radio" name="rating" value="2" />
+          &nbsp;
+          <input type="radio" name="rating" value="3" />
+          &nbsp;
+          <input type="radio" name="rating" value="4" />
+          &nbsp;
+          <input type="radio" name="rating" value="5" />
+          &nbsp;<span>Good</span><br />
+          <br />
+          <b>Enter the code in the box below:</b><br />
+          <input type="text" name="captcha" value="" />
+          <br />
+          <br />
+          <img src="index.php?route=product/product/captcha" alt="" id="captcha" /><br />
+          <br />
+          <div class="buttons">
+            <div class="right"><a id="button-review" class="button">Continue</a></div>
+          </div>
+        </div>
+  </mat-tab>
+</mat-tab-group>
 <!-- Description and Reviews Tab Start -->
 <!--Related Product Start-->
 <div class="box">

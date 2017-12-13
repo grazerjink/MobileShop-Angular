@@ -3,6 +3,7 @@ import { SanPhamService } from '../services/san-pham.service';
 import { SanPham } from '../models/san-pham.model';
 import { HttpErrorResponse } from '@angular/common/http/src/response';
 import { log } from 'util';
+import { Input } from '@angular/core/src/metadata/directives';
 
 @Component({
   selector: 'app-product',
@@ -10,6 +11,9 @@ import { log } from 'util';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
+
+  @Input()
+  categoryId: number?;
 
   tieuDe: string = "Tất cả sản phẩm";
   sanPhams: SanPham[];
@@ -21,7 +25,21 @@ export class ProductComponent implements OnInit {
   }
 
   getSanPhams() {
-    this.sanPhamService.getSanPhams().subscribe(
+    if(this.categoryId !== null) {
+      this.sanPhamService.getSanPhams().subscribe(
+          data => {
+              this.sanPhams = data;
+          },
+          (err: HttpErrorResponse) => {
+            if (err.error instanceof Error) {
+              console.log('Xảy ra lỗi:', err.error.message);
+            } else {
+              console.log(`Lỗi kết nối server: ${err.status}, nội dung: ${err.error}`);
+            } 
+      }); 
+    }
+    else {
+      this.sanPhamService.getSanPhamsByCategoryId().subscribe(
         data => {
             this.sanPhams = data;
         },
@@ -31,7 +49,8 @@ export class ProductComponent implements OnInit {
           } else {
             console.log(`Lỗi kết nối server: ${err.status}, nội dung: ${err.error}`);
           } 
-    }); 
+      });
+    }
   }
 
   sapXep(condition: string) {

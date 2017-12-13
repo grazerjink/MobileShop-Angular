@@ -20,4 +20,10 @@ export class SanPhamService {
     );
   }
 
+  getSanPhamsByCategoryId(categoryId: number): Observable<SanPham[]> {
+    return this.http.get<SanPham[]>(this.api.getApiUrl(`api/sanphams/${categoryId}`)).pipe(
+        catchError(this.api.handleError('getSanPhams', []))
+    );
+  }
+
 }

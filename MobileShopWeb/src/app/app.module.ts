@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTabsModule } from '@angular/material';
-import { TabModule } from 'angular-tabs-component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -31,8 +30,7 @@ import { HangSanXuatService } from './services/hang-san-xuat.service';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatTabsModule,
-    TabModule
+    MatTabsModule
   ],
   providers: [
     ApiService,

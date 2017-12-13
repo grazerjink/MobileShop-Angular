@@ -86,5 +86,14 @@ public class SanPhamService {
 		List<SanPham> list = query.list();
 		return list;
 	}
+
+	public List<SanPham> listByCategoryId(Integer categoryId) {
+		String hql = "FROM SanPham s WHERE s.category.id = :id ";
+		Session session = factory.getCurrentSession();
+		Query query = session.createQuery(hql);
+		query.setParameter("id", categoryId);
+		List<SanPham> list = query.list();
+		return list;
+	}
 	
 }
