@@ -1,0 +1,19 @@
+<div class="box">
+  <div class="box-heading">SẢN PHẨM MỚI VỀ</div>
+  <div class="box-content">
+    <div class="box-product">
+      <div class="flexslider">
+        <ul class="slides">
+          <li *ngFor="let sp of sanPhamMois">
+            <div class="slide-inner">
+              <div class="image"><a routerLink="/san-pham/{{sp.id}}"><img src="assets/image/products/{{sp.hinh}}" alt="{{sp.ten}}" /></a></div>
+              <div class="name"><a routerLink="/san-pham/{{sp.id}}">{{sp.ten}}</a></div>
+              <div class="price">{{sp.giaBan.toLocaleString()}}</div>
+              <div class="clear"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

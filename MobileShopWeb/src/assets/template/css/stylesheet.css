@@ -870,7 +870,6 @@ select{width:99%;}
 .product-list .left{text-align:center;}
 .product-list .left .cart .button, .product-list .left .cart .wishlist, .product-list .left .cart .compare{float:none;}
 }
-}
 @media screen and (max-width:320px) {
 .main-wrapper{padding:0 5px;}
 #header .links{line-height:20px;}

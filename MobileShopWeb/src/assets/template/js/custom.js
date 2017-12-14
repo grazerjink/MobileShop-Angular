@@ -16,8 +16,8 @@ $(function () {
 			}
 		});
 		});
-jQuery('.backtotop').click(function(){
-	jQuery('html, body').animate({scrollTop:0}, 'slow');
+$('.backtotop').click(function(){
+	$('html, body').animate({scrollTop:0}, 'slow');
 });
 
 
@@ -124,23 +124,23 @@ $(document).ready(function() {
 
 
 /******** Carousel **********/
-$('#carousel ul').jcarousel({
-	vertical: false,
-	visible: 5,
-	scroll: 3
-});
+// $('#carousel ul').jcarousel({
+// 	vertical: false,
+// 	visible: 5,
+// 	scroll: 3
+// });
 
 /******** Tabs 
 $('#tabs a').tabs();**********/
 
 /******** Colorbox **********/
 
-$('.colorbox').colorbox({
-			overlayClose: true,
-			opacity: 0.8,
-			maxHeight: 550,
-			maxWidth: 550,
-			width:'100%'
-		});
+// $('.colorbox').colorbox({
+// 			overlayClose: true,
+// 			opacity: 0.8,
+// 			maxHeight: 550,
+// 			maxWidth: 550,
+// 			width:'100%'
+// 		});
 /******** ================= ********/
 });

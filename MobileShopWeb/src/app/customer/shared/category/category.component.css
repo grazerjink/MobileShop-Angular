@@ -1,0 +1,12 @@
+.box-heading {
+    font-size: 14px;
+}
+
+a.button, input.button {
+    background: red;
+}
+
+.banner div img {
+    width: 100%;
+    height: 100%;
+}

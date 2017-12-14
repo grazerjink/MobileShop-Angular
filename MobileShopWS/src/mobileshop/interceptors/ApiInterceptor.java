@@ -13,7 +13,8 @@ public class ApiInterceptor extends HandlerInterceptorAdapter {
 			throws Exception {
 		response.addHeader("Access-Control-Allow-Origin", "*");
 		response.addHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE, OPTIONS");
-		response.addHeader("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+		response.addHeader("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");	
+		response.addHeader("Content-Type", "application/json; charset=UTF-8");		
 		response.setHeader("Access-Control-Max-Age", "3600");
 		return true;
 	}

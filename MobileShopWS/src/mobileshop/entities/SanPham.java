@@ -1,5 +1,6 @@
 package mobileshop.entities;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 
@@ -13,13 +14,19 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "san_pham")
-public class SanPham {
+public class SanPham implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "id")
@@ -55,6 +62,8 @@ public class SanPham {
 	@Column(name = "mo_ta")
 	String moTa;
 	@Column(name = "ngay_dang")
+	@DateTimeFormat(pattern="MM/dd/yyyy")
+	@Temporal(TemporalType.TIMESTAMP)
 	Date ngayDang;
 	@Column(name = "trang_thai")
 	Boolean trangThai;
@@ -63,7 +72,7 @@ public class SanPham {
 	@JoinColumn(name = "hang_id")
 	HangSanXuat hang;
 	
-	@OneToMany(mappedBy = "sanPham", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "sanPham")
 	Collection<CtHoaDon> ctHoaDons;
 	
 	public Integer getId() {

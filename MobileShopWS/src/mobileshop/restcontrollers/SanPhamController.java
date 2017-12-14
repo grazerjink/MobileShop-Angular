@@ -1,6 +1,7 @@
 package mobileshop.restcontrollers;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,9 +25,33 @@ public class SanPhamController {
 		return list;
 	}
 	
-	@GetMapping("sanphams/{id}")
-	public List<SanPham> getListSanPhamByCategoryId(@PathVariable Integer categoryId) {
-		List<SanPham> list = sanPhamService.listByCategoryId(categoryId);
+	@GetMapping("sanphams/{hangId}")
+	public List<SanPham> getListSanPhamByHangId(@PathVariable Integer hangId) {
+		List<SanPham> list = sanPhamService.listByHangId(hangId);
+		return list;
+	}
+	
+	@GetMapping("sanpham/{id}")
+	public SanPham getSingleById(@PathVariable Integer id) {
+		SanPham sp = sanPhamService.get(id);
+		return sp;
+	}
+	
+	@GetMapping("sanphamrelateds/{id}")
+	public List<SanPham> getSanPhamRelated(@PathVariable Integer id) {
+		List<SanPham> list  = sanPhamService.listRelated(id);
+		return list;
+	}
+	
+	@GetMapping("sanphambanchays")
+	public List<SanPham> getListSanPhamBanChay() {
+		List<SanPham> list = sanPhamService.listBanChay();
+		return list;
+	}
+	
+	@GetMapping("sanphammois")
+	public List<SanPham> getListSanPhamMoi() {
+		List<SanPham> list = sanPhamService.listMoiNhat();
 		return list;
 	}
 

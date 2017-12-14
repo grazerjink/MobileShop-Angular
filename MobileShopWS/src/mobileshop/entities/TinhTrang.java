@@ -1,5 +1,6 @@
 package mobileshop.entities;
 
+import java.io.Serializable;
 import java.util.Collection;
 
 import javax.persistence.Column;
@@ -13,6 +14,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "tinh_trang")
@@ -24,7 +26,7 @@ public class TinhTrang {
 	@Column(name = "mo_ta")
 	String moTa;
 	
-	@OneToMany(mappedBy = "tinhTrang", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "tinhTrang")
 	Collection<HoaDon> hoaDons;
 
 	public Integer getId() {

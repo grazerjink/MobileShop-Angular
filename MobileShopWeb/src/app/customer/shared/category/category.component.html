@@ -1,0 +1,26 @@
+<!--Category Start -->
+<div class="box">
+  <div class="box-heading">{{tieuDe}}</div>
+  <div class="box-content box-category">
+    <ul id="cat_accordion">
+      <li *ngFor='let hsx of hangSanXuats'>
+          <a routerLink='/hang/{{hsx.id}}'>{{hsx.ten}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<script type="text/javascript" src="js/jquery.dcjqaccordion.js"></script>
+<!--Category End -->
+<!--Bestsellers Part Start-->
+<app-best-seller></app-best-seller>
+  <!--Bestsellers Part End-->
+<!--Latest Product Start-->
+<app-lastest></app-lastest>
+<!--Latest Product End-->
+<!--Banner Start-->
+<div class="banner">
+  <div><a><img src="assets/image/ttq-banner-2.gif" /></a></div>
+  <div><a><img src="assets/image/ttq-banner-3.gif" /></a></div>
+  <div><a><img src="assets/image/ttq-banner-4.gif" /></a></div>
+</div>
+<!--Banner End-->

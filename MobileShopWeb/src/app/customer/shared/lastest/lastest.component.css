@@ -1,0 +1,23 @@
+.box-heading {
+    font-size: 14px;
+}
+.box-product .price {
+    display: block;
+    font-weight: bold;
+    margin: 5px 0 10px 0;
+    padding: 0 8px;
+    color: red;
+    font-size: 13px;
+}
+.box-product .price-old {
+    color: lightslategray;;
+    text-decoration: line-through;
+    font-weight: normal;
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.slide-inner .image {
+    width: 20%;
+    height: 30%;
+}

@@ -1,0 +1,58 @@
+a.button, input.button {
+    background: red;
+}
+.product-grid .price-old {
+    color: lightslategray;
+    text-decoration: line-through;
+    font-weight: normal;
+    margin-right: 5px;
+    font-size: 12px;
+}
+.product-grid .price {
+    display: block;
+    font-weight: bold;
+    margin: 5px 0 10px 0;
+    padding: 0 8px;
+    color: brown;
+    font-size: 13px;
+}
+.pagination {
+    border-top: 1px solid #EEEEEE;
+    padding-top: 8px;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.pagination .links b {
+    vertical-align: middle;
+    display: inline-block;
+    border: 1px solid red;
+    padding: 4px 10px;
+    font-weight: normal;
+    text-decoration: none;
+    color: #fff;
+    background: red;
+}
+.ttq-title {
+    margin-top: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+}
+select {
+    font-weight: bold;
+    font-size: 14px;
+    font-family: 'Quicksand', sans-serif;
+}
+.ttq-product {
+    margin-top: 10px;
+    width: 23.5%;
+    margin-right: 10px;
+}
+.name {
+    min-height: 40px;
+}
+.ttq-image a img {
+    width: 100%;
+    height: 100%;
+}

@@ -1,43 +1,37 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { MatTabsModule } from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './/app-routing.module';
-import { CategoryComponent } from './category/category.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { TinhTrangService } from './services/tinh-trang.service';
+import { AppRoutingModule } from './app-routing.module';
 import { ApiService } from './services/api.service';
-import { ProductComponent } from './product/product.component';
-import { SanPhamService } from './services/san-pham.service';
-import { DetailComponent } from './detail/detail.component';
 import { HangSanXuatService } from './services/hang-san-xuat.service';
+import { SanPhamService } from './services/san-pham.service';
+import { TinhTrangService } from './services/tinh-trang.service';
+import { HttpClientModule } from '@angular/common/http'; 
+import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CategoryComponent,
-    HeaderComponent,
-    FooterComponent,
-    ProductComponent,
-    DetailComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    HttpModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    NgbModule
   ],
   providers: [
     ApiService,
-    TinhTrangService,
+    HangSanXuatService,
     SanPhamService,
-    HangSanXuatService
+    TinhTrangService
   ],
-  bootstrap: [AppComponent]
+  bootstrap:[AppComponent]
 })
 export class AppModule { }

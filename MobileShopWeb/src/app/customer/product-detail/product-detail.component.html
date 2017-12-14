@@ -1,0 +1,179 @@
+<h1 style="margin-bottom: 30px;">{{sanPham?.ten}}</h1>
+<div class="product-info">
+  <div class="left">
+    <div class="image ttq-image">
+      <a href="assets/image/products/{{sanPham?.hinh}}" title="{{sanPham?.ten}}" class="cloud-zoom colorbox" id='zoom1' rel="adjustX: 0, adjustY:0, tint:'#000000',tintOpacity:0.2, zoomWidth:360, position:'inside', showTitle:false">
+        <img src="assets/image/products/{{sanPham?.hinh}}" title="{{sanPham?.ten}}" alt="{{sanPham?.ten}}" id="image" />
+        <span id="zoom-image"><i class="zoom_bttn"></i> Zoom</span>
+      </a>
+    </div>
+  </div>
+  <div class="right">
+    <div class="description"> 
+      <div *ngIf="sanPham?.soLuong > 0; then conHang; else hetHang">
+          Here is never showing
+      </div>      
+      <ng-template #conHang>
+          <span class="ttq-status">Còn hàng: <span class="ttq-quantity">{{sanPham?.soLuong}}</span></span>
+      </ng-template>      
+      <ng-template #hetHang>
+          <span class="ttq-status">Hết hàng. Vui lòng Liên hệ</span>
+      </ng-template>
+    </div>
+    <div class="price">Giá: <span class="price-new">{{sanPham?.giaBan.toLocaleString()}} VNĐ</span> <br />
+    </div>
+    <div class="ttq-quantity-box">
+      <div>
+        <div class="qty"> <strong>Số lượng:</strong> <a class="qtyBtn mines" (click)="decreaseQuantity()">-</a>
+          <input id="qty" type="text" class="w30" name="quantity" size="2" value="{{soLuong}}" />
+          <a class="qtyBtn plus" (click)="increaseQuantity()">+</a>
+          <input type="hidden" name="product_id" size="2" value="30" />
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cart">
+      <div>
+        <input type="button" value="Thêm giỏ hàng" id="button-cart" class="button" />
+      </div>
+    </div>    
+    <div class="review">
+      <div><img src="assets/template/image/stars-3.png" alt="2 reviews" />&nbsp;&nbsp;<a onClick="$('a[href=\'#tab-review\']').trigger('click');">0 reviews</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onClick="$('a[href=\'#tab-review\']').trigger('click');">Write a review</a></div>
+    </div>
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style "> <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a> <a class="addthis_button_tweet"></a> <a class="addthis_button_google_plusone" g:plusone:size="medium"></a> <a class="addthis_counter addthis_pill_style"></a> </div>
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=xa-506f325f57fbfc95"></script>
+    <!-- AddThis Button END -->
+  </div>
+</div>
+<!-- Description and Reviews Tab Start -->
+<mat-tab-group>
+  <mat-tab label="Mô tả sản phẩm">
+    <div id="tab-description" class="tab-content">
+      <p style="font-size: 14px;">
+        <strong>{{sanPham?.moTa}}</strong><br>
+        <!-- iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow. -->
+      </p>
+      <p style="font-size: 14px;">
+          <strong>{{sanPham?.moTa}}</strong><br>
+          <!-- iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow. -->
+        </p>
+        <p style="font-size: 14px;">
+            <strong>{{sanPham?.moTa}}</strong><br>
+            <!-- iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow. -->
+          </p>
+          <p style="font-size: 14px;">
+              <strong>{{sanPham?.moTa}}</strong><br>
+              <!-- iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow. -->
+            </p>
+    </div>
+  </mat-tab>
+  <mat-tab label="Thông số kỹ thuật">
+      <div id="tab-review" class="tab-content">
+          <table class="table table-border" style="width: 100%">
+            <tbody>
+              <tr>
+                <td class="ten-thong-so">Màn hình</td>
+                <td>{{sanPham?.manHinh}}</td>
+              </tr>
+              <tr>
+                <td class="ten-thong-so">Hệ điều hành</td>
+                <td>{{sanPham?.heDieuHanh}}</td>
+              </tr>
+              <tr>
+                <td class="ten-thong-so">Camera sau</td>
+                <td>{{sanPham?.cameraSau}}</td>
+              </tr>
+              <tr>
+                <td class="ten-thong-so">Camera trước</td>
+                <td>{{sanPham?.cameraTruoc}}</td>
+              </tr>
+              <tr>
+                <td class="ten-thong-so">CPU</td>
+                <td>{{sanPham?.cpu}}</td>
+              </tr>
+              <tr>
+                <td class="ten-thong-so">RAM</td>
+                <td>{{sanPham?.ram}}</td>
+              </tr>
+              <tr>
+                <td class="ten-thong-so">Bộ nhớ trong</td>
+                <td>{{sanPham?.rom}}</td>
+              </tr>
+              <tr>
+                <td class="ten-thong-so">Thẻ SIM</td>
+                <td>{{sanPham?.theSim}}</td>
+              </tr>
+              <tr>
+                <td class="ten-thong-so">Dung lượng pin</td>
+                <td>{{sanPham?.pin}}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+  </mat-tab>
+</mat-tab-group>
+<!-- Description and Reviews Tab Start -->
+<!--Related Product Start-->
+<!-- <div class="box">
+  <div class="box-heading">Related Products ({{soSanPham}})</div>
+  <div class="box-content">
+    <div class="box-product">
+      <div class="flexslider" id="related_pro">
+        <ul class="slides">
+          <li *ngFor="let sp of sanPhamRelateds">
+            <div class="slide-inner">
+              <div class="image ttq-relate-img">
+                <a routerLink="/san-pham/{{sp.id}}">
+                  <img src="assets/image/products/{{sp.hinh}}" alt="{{sp.ten}}" />
+                </a>
+              </div>
+              <div class="name"><a routerLink="/san-pham/{{sp.id}}">{{sp.ten}}</a></div>
+              <div class="price">{{sp.giaBan}}</div>
+              <div class="cart">
+                <input type="button" value="Thêm giỏ hàng" class="button" />
+              </div>
+              <div class="rating"><img src="assets/template/image/stars-4.png" alt="Based on 1 reviews." /></div>
+              <div class="clear"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="box">
+    <div class="box-heading">Related Products ({{sanPhamRelateds?.length}})</div>
+    <div class="box-content">
+      <div class="box-product">
+        <div ng2-carouselamos
+            class="slides-wrapper"
+            [items]="sanPhamRelateds"
+            [width]="660"
+            [$prev]="prev"
+            [$next]="next"
+            [$item]="item">
+          </div>      
+        <ng-template #prev>
+          <img src="assets/image/arrow-left.png" id="left" />
+        </ng-template>
+        <ng-template #next>
+          <img src="assets/image/arrow-right.png" id="right" />
+        </ng-template>
+        <ng-template #item let-item let-i="index">
+          <div class="items">
+            <a routerLink="/san-pham/{{item.id}}">
+              <img src="assets/image/products/{{item.hinh}}" alt="{{item.ten}}" />
+            </a>            
+            <div class="name ttq-item-name"><a routerLink="/san-pham/{{item.id}}">{{item.ten}}</a></div>  
+            <div class="price">{{item.giaBan.toLocaleString()}}</div>
+            <div class="cart">
+              <input type="button" value="Thêm giỏ hàng" class="button" />
+            </div>
+            <div class="rating"><img src="assets/template/image/stars-4.png" alt="Based on 1 reviews." /></div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+<!--Related Product End-->

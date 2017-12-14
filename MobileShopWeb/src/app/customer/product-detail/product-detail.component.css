@@ -1,0 +1,117 @@
+.mat-tab-header {
+    margin-bottom: 20px;
+}
+/* Styles for tab labels */
+.mat-tab-label {
+    min-width: 25px !important;
+    font-size: 1.2em;
+    background-color: transparent;
+    font-weight: 700;
+}
+
+.mat-ripple-element {
+    display: none;
+}
+
+/* Styles for the ink bar */
+.mat-ink-bar {
+    background-color: red;
+}
+
+.breadcrumb a {
+    color: #999;
+    font-size: 13px;
+}
+.product-info > .left {
+    float: left;
+    margin-right: 0px;
+    width: 49%;
+}
+.ttq-image {
+    width: 100%;
+}
+#image {
+    width: 90%;
+    height: 100%;
+}
+
+.ttq-status {
+    font-size: 18px;
+    color: blue;
+}
+.ttq-quantity {
+    color: black;
+}
+
+.product-info .price {
+    overflow: auto;
+    padding: 10px 5px 10px 5px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.product-info .price-new {
+    color: red;
+}
+
+a.button, input.button {
+    background: red;
+}
+
+.box-product .price {
+    color: red;
+}
+
+input[type='text'], input[type='password'], textarea {
+    font-size: 16px;
+}
+
+.ten-thong-so {
+    width: 30%;
+}
+
+.product-info .ttq-quantity-box {
+    border-top: 1px solid #eee;
+    padding: 15px 5px 10px 5px;
+    color: #4D4D4D;
+    overflow: auto;
+}
+
+.ng2-carouselamos-wrapper {
+    width: 650px;
+}
+
+.items {
+    text-align: center;
+    width: 170px;
+    min-height: 250px;
+    margin: 0 20px;
+}
+
+.items a img {
+    width: 150px;
+}
+
+.ttq-item-name {
+    margin-top: 20px;
+}
+
+#left {
+    position: absolute;
+    left: -5px;
+    top: -60px;
+}
+
+#right {
+    position: absolute;
+    right: 0px;
+    top: -60px;
+}
+
+#left, #right { 
+    z-index: 99;    
+    width: 2.5%;
+    cursor: pointer;
+}

@@ -1,3 +1,5 @@
+import { HangSanXuat } from "./hang-sx.model";
+
 export interface SanPham {
     id: number;
 	ten: string; 
@@ -15,5 +17,5 @@ export interface SanPham {
 	theSim: string;
 	pin: string;
 	moTa: string;
-	ngayDang: Date;
+	ngayDang: Date;	
 }

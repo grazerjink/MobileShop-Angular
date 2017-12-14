@@ -1,5 +1,6 @@
 package mobileshop.services;
 
+import java.util.Collections;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -7,6 +8,7 @@ import javax.transaction.Transactional;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -87,11 +89,35 @@ public class SanPhamService {
 		return list;
 	}
 
-	public List<SanPham> listByCategoryId(Integer categoryId) {
-		String hql = "FROM SanPham s WHERE s.category.id = :id ";
+	public List<SanPham> listByHangId(Integer hangId) {
+		String hql = "FROM SanPham s WHERE s.hang.id = :id ";
 		Session session = factory.getCurrentSession();
 		Query query = session.createQuery(hql);
-		query.setParameter("id", categoryId);
+		query.setParameter("id", hangId);
+		List<SanPham> list = query.list();
+		return list;
+	}
+	
+	public List<SanPham> listRelated(Integer sanPhamId) {
+		SanPham sp = get(sanPhamId);
+		List<SanPham> list = listByHangId(sp.getHang().getId());
+		return list;
+	}
+
+	public List<SanPham> listBanChay() {
+		String hql = "FROM SanPham";
+		Session session = factory.getCurrentSession();
+		Query query = session.createQuery(hql);
+		query.setMaxResults(5);
+		List<SanPham> list = query.list();
+		return list;
+	}
+
+	public List<SanPham> listMoiNhat() {
+		String hql = "FROM SanPham s ORDER BY s.ngayDang DESC";
+		Session session = factory.getCurrentSession();
+		Query query = session.createQuery(hql);
+		query.setMaxResults(5);
 		List<SanPham> list = query.list();
 		return list;
 	}
