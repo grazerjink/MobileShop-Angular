@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ShoppingCartService } from './services/shopping-cart.service';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ApiService,
     HangSanXuatService,
     SanPhamService,
-    TinhTrangService
+    TinhTrangService,
+    ShoppingCartService
   ],
   bootstrap:[AppComponent]
 })

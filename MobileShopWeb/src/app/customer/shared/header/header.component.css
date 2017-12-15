@@ -13,3 +13,12 @@
     z-index: 1012;
     position: relative;
 }
+
+a.button, input.button {
+    background: red;
+}
+
+.ttq-cart-image {
+    width: 40px;
+    height: 40px;
+}

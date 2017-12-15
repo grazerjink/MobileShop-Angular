@@ -1,5 +1,6 @@
 package mobileshop.entities;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.hibernate5.Hibernate5Module;
 
@@ -9,3 +10,4 @@ public class HibernateAwareObjectMapper extends ObjectMapper {
 		registerModule(new Hibernate5Module());
 	}
 }
+

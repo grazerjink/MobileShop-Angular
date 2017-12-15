@@ -4,6 +4,7 @@ import { SanPham } from '../../models/san-pham.model';
 import { SanPhamService } from '../../services/san-pham.service';
 import { log } from 'util';
 import { Params } from '@angular/router/src/shared';
+import { ShoppingCartService } from '../../services/shopping-cart.service';
 
 declare var $ :any;
 @Component({
@@ -20,7 +21,8 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private sanPhamService: SanPhamService
+    private sanPhamService: SanPhamService,
+    private shoppingCartService: ShoppingCartService
   ) { 
     this.route.params.subscribe((params: Params) => {
       this.getSanPhamById();
@@ -51,22 +53,9 @@ export class ProductDetailComponent implements OnInit {
     ); 
   }
 
-  // ngAfterViewInit() {
-  //   $("#related_pro").flexslider({animation: "slide",
-  //     animationLoop: false,
-  //     slideshow: false,
-  //     itemWidth: 210,
-  //     minItems: this.getGridSize(), // use function to pull in initial value
-  //     maxItems: this.getGridSize() // use function to pull in initial value
-  //   });
-  // }
-
-  // getGridSize() {
-  //   return  (window.innerWidth < 320) ? 1 :
-  //           (window.innerWidth < 600) ? 2 :
-  //           (window.innerWidth < 800) ? 3 :
-  //           (window.innerWidth < 900) ? 3 : 4;
-  // }
+  themGioHang() {
+    this.shoppingCartService.themSanPhamVaSoLuong(this.sanPham, this.soLuong);
+  }
 
   decreaseQuantity() {
     if(this.soLuong > 1) {

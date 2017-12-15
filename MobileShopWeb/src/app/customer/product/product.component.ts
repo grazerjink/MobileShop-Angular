@@ -5,6 +5,7 @@ import { SanPham } from '../../models/san-pham.model';
 import { SanPhamService } from '../../services/san-pham.service';
 import { ActivatedRoute } from '@angular/router';
 import { Params } from '@angular/router/src/shared';
+import { ShoppingCartService } from '../../services/shopping-cart.service';
 
 declare const $: any;
 
@@ -20,6 +21,7 @@ export class ProductComponent implements OnInit {
 
   constructor(
     private sanPhamService: SanPhamService,
+    private shoppingCartService: ShoppingCartService,
     private route: ActivatedRoute) {
       this.route.params.subscribe((params: Params) => {
          this.getSanPhams();    
@@ -105,8 +107,7 @@ export class ProductComponent implements OnInit {
     });
   }
 
-  addToCart(event) {
-    alert("Mua");
-    
+  addToCart(event, id) {
+    this.shoppingCartService.themSanPhamVaoGioHang(id);    
   }
 }
