@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { CustomerComponent } from './customer.component';
 import { CustomerRoutingModule } from './customer-routing.module';
 import { HeaderComponent } from './shared/header/header.component';
@@ -11,7 +12,8 @@ import { LastestComponent } from './shared/lastest/lastest.component';
 @NgModule({
   imports: [
     CommonModule,
-    CustomerRoutingModule
+    CustomerRoutingModule,
+    FormsModule
   ],
   declarations: [
     CustomerComponent, 

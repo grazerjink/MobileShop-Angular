@@ -5,6 +5,7 @@ import { SanPhamService } from '../../services/san-pham.service';
 import { log } from 'util';
 import { Params } from '@angular/router/src/shared';
 import { ShoppingCartService } from '../../services/shopping-cart.service';
+import { ToastrService } from 'ngx-toastr';
 
 declare var $ :any;
 @Component({
@@ -20,6 +21,7 @@ export class ProductDetailComponent implements OnInit {
   soSanPham = 0;
 
   constructor(
+    private toastr: ToastrService,
     private route: ActivatedRoute,
     private sanPhamService: SanPhamService,
     private shoppingCartService: ShoppingCartService
@@ -55,6 +57,7 @@ export class ProductDetailComponent implements OnInit {
 
   themGioHang() {
     this.shoppingCartService.themSanPhamVaSoLuong(this.sanPham, this.soLuong);
+    this.showSuccess("Đã thêm 1 sản phẩm vào giỏ.");
   }
 
   decreaseQuantity() {
@@ -65,6 +68,10 @@ export class ProductDetailComponent implements OnInit {
 
   increaseQuantity() {
     this.soLuong++;
+  }
+
+  showSuccess(message: string) {
+    this.toastr.success(message,null);
   }
 
 }

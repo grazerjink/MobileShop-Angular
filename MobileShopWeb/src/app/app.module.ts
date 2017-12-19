@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ToastrModule } from 'ngx-toastr';
 
 
 import { AppComponent } from './app.component';
@@ -25,7 +26,8 @@ import { ShoppingCartService } from './services/shopping-cart.service';
     HttpClientModule,
     HttpModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     ApiService,

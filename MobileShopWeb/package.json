@@ -26,10 +26,11 @@
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.7",
     "bootstrap-4": "^4.0.0",
     "core-js": "^2.4.1",
+    "jquery": "^3.2.1",
     "ng2-carouselamos": "^3.2.0",
+    "ngx-toastr": "^8.0.0",
     "rxjs": "^5.5.2",
-    "zone.js": "^0.8.14",
-    "jquery": "^3.2.1"
+    "zone.js": "^0.8.14"
   },
   "devDependencies": {
     "@angular/cli": "1.5.0",

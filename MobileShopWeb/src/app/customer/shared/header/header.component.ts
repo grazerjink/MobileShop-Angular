@@ -3,6 +3,9 @@ import { ShoppingCartService } from '../../../services/shopping-cart.service';
 import { CartInfo } from '../../../models/cart-info.model';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
+import { SanPhamService } from '../../../services/san-pham.service';
+import { Router } from '@angular/router';
+import { Input } from '@angular/core/src/metadata/directives';
 
 @Component({
   selector: 'app-header',
@@ -13,10 +16,11 @@ export class HeaderComponent implements OnInit {
   
   private subscription : Subscription;
   cartInfo: CartInfo;
+  timKiem: string = "";
 
   constructor(
-    private shoppingCartService: ShoppingCartService) {
-  }
+    private router: Router,
+    private shoppingCartService: ShoppingCartService) {}
 
   ngOnInit() {
     this.getCartInfo();
@@ -33,6 +37,10 @@ export class HeaderComponent implements OnInit {
   xoaSanPham(id: number) {
     this.shoppingCartService.xoaSanPhamTrongGioHang(id);
     this.cartInfo = this.shoppingCartService.getCartInfo();
+  }
+
+  timKiemSanPham() {
+    this.router.navigate([`/tim-kiem/${this.timKiem}`]);
   }
 
 }

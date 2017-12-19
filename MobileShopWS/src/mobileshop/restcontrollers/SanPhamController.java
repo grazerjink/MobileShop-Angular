@@ -3,10 +3,14 @@ package mobileshop.restcontrollers;
 import java.util.List;
 import java.util.Map;
 
+import javax.xml.ws.RequestWrapper;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import mobileshop.entities.SanPham;
@@ -35,6 +39,12 @@ public class SanPhamController {
 	public SanPham getSingleById(@PathVariable Integer id) {
 		SanPham sp = sanPhamService.get(id);
 		return sp;
+	}
+	
+	@GetMapping("timkiem")
+	public List<SanPham> getListSanPham(@RequestParam("name") String name) {
+		List<SanPham> list = sanPhamService.filterByName(name);
+		return list;
 	}
 	
 	@GetMapping("sanphamrelateds/{id}")

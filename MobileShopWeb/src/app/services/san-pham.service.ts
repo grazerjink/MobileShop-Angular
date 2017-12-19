@@ -33,6 +33,12 @@ export class SanPhamService {
     );
   }
 
+  searchSanPhamByName(name: string): Observable<SanPham[]> {
+    return this.http.get<SanPham[]>(this.api.getApiUrl(`api/timkiem/?name=${name}`)).pipe(
+      catchError(this.api.handleError('searchSanPhamByName', null))
+    );
+  }
+
   getSanPhamRelateds(sanPhamId: string): Observable<SanPham[]> {
     return this.http.get<SanPham[]>(this.api.getApiUrl(`api/sanphamrelateds/${sanPhamId}`)).pipe(
         catchError(this.api.handleError('getSanPhamRelateds', []))

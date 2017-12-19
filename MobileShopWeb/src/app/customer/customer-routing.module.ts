@@ -10,7 +10,8 @@ const routes: Routes = [
             { path: '', loadChildren: './product/product.module#ProductModule' },
             { path: 'hang/:id', loadChildren: './product/product.module#ProductModule' },
             { path: 'san-pham/:id', loadChildren: './product-detail/product-detail.module#ProductDetailModule' },
-            { path: 'gio-hang', loadChildren: './shopping-cart/shopping-cart.module#ShoppingCartModule' }
+            { path: 'gio-hang', loadChildren: './shopping-cart/shopping-cart.module#ShoppingCartModule' },
+            { path: 'tim-kiem/:sp', loadChildren: './product/product.module#ProductModule' }
         ]
     }
 ];

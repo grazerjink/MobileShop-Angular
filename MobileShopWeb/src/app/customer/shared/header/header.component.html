@@ -1,40 +1,61 @@
 <header id="header">
-    <section class="hsecond">
-      <div id="logo"><a routerLink=""><img src="assets/image/ttq-logo.png" title="TTQ Shop" alt="TTQ Shop" /></a></div>
-      <div id="search">
-        <div class="button-search"></div>
-        <input type="text" name="search" placeholder="Search" value="" />
+  <section class="hsecond">
+    <div id="logo">
+      <a routerLink="">
+        <img src="assets/image/ttq-logo.png" title="TTQ Shop" alt="TTQ Shop" />
+      </a>
+    </div>
+    <div id="search">
+        <div class="button-search" (click)="timKiemSanPham()"></div>
+        <input type="text" name="sp" placeholder="Tìm kiếm tên sản phẩm..." [(ngModel)]="timKiem" />
+    </div>
+    <!--Mini Shopping Cart Start-->
+    <section id="cart">
+      <div class="heading">
+        <h4>
+          <img style="vertical-align: baseline;" width="32" height="32" alt="" src="assets/template/image/cart-bg.png">
+        </h4>
+        <a>
+          <span id="cart-total">{{cartInfo?.sanPhams.length}} sản phẩm - {{cartInfo?.tongTien.toLocaleString()}} VNĐ</span>
+        </a>
       </div>
-      <!--Mini Shopping Cart Start-->
-      <section id="cart">
-        <div class="heading">
-          <h4><img style="vertical-align: baseline;" width="32" height="32" alt="" src="assets/template/image/cart-bg.png"></h4>
-          <a><span id="cart-total">{{cartInfo?.sanPhams.length}} sản phẩm - {{cartInfo?.tongTien.toLocaleString()}} VNĐ</span></a> </div>
-        <div class="content">
-          <div class="mini-cart-info" style="min-height: 50px;">
-            <table>
-              <tr *ngFor="let sp of cartInfo?.sanPhams">
-                <td class="image"><a routerLink="/san-pham/{{sp.id}}"><img class="ttq-cart-image" src="assets/image/products/{{sp.hinh}}" alt="{{sp.ten}}" title="{{sp.ten}}" /></a></td>
-                <td class="name"><a routerLink="/san-pham/{{sp.id}}">{{sp.ten}}</a></td>
-                <td class="quantity">x&nbsp;{{sp.soLuong}}</td>
-                <td class="total">{{sp.giaBan.toLocaleString()}} VNĐ</td>
-                <td class="remove"><img src="assets/template/image/remove-small.png" alt="Remove" title="Remove" (click)="xoaSanPham(sp.id)"/></td>
-              </tr>
-            </table>
-          </div>
-          <div class="mini-cart-total">
-            <table> 
-              <tr>
-                <td class="right"><b>Thành tiền: </b></td>
-                <td class="right">{{cartInfo?.tongTien.toLocaleString()}} VNĐ</td>
-              </tr>
-            </table>
-          </div>
-          <!-- &nbsp; <a class="button" href="checkout.html">Thanh toán</a> -->
-          <div class="checkout"><a class="button" routerLink="/gio-hang">Xem giỏ hàng</a> </div>
+      <div class="content">
+        <div class="mini-cart-info" style="min-height: 50px;">
+          <table>
+            <tr *ngFor="let sp of cartInfo?.sanPhams">
+              <td class="image">
+                <a routerLink="/san-pham/{{sp.id}}">
+                  <img class="ttq-cart-image" src="assets/image/products/{{sp.hinh}}" alt="{{sp.ten}}" title="{{sp.ten}}" />
+                </a>
+              </td>
+              <td class="name">
+                <a routerLink="/san-pham/{{sp.id}}">{{sp.ten}}</a>
+              </td>
+              <td class="quantity">x&nbsp;{{sp.soLuong}}</td>
+              <td class="total">{{sp.giaBan.toLocaleString()}} VNĐ</td>
+              <td class="remove">
+                <img src="assets/template/image/remove-small.png" alt="Remove" title="Remove" (click)="xoaSanPham(sp.id)" />
+              </td>
+            </tr>
+          </table>
         </div>
-      </section>
-      <!--Mini Shopping Cart End-->
-      <div class="clear"></div>
+        <div class="mini-cart-total">
+          <table>
+            <tr>
+              <td class="right">
+                <b>Thành tiền: </b>
+              </td>
+              <td class="right">{{cartInfo?.tongTien.toLocaleString()}} VNĐ</td>
+            </tr>
+          </table>
+        </div>
+        <!-- &nbsp; <a class="button" href="checkout.html">Thanh toán</a> -->
+        <div class="checkout">
+          <a class="button" routerLink="/gio-hang">Xem giỏ hàng</a>
+        </div>
+      </div>
     </section>
-  </header>
+    <!--Mini Shopping Cart End-->
+    <div class="clear"></div>
+  </section>
+</header>

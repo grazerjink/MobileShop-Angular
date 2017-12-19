@@ -121,5 +121,14 @@ public class SanPhamService {
 		List<SanPham> list = query.list();
 		return list;
 	}
+
+	public List<SanPham> filterByName(String name) {
+		String hql = "FROM SanPham s WHERE s.ten LIKE :name";
+		Session session = factory.getCurrentSession();
+		Query query = session.createQuery(hql);
+		query.setParameter("name", "%"+name+"%");
+		List<SanPham> list = query.list();
+		return list;
+	}
 	
 }
